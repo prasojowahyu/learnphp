@@ -18,6 +18,7 @@
 
     function tambahdata($data) {
         global $dbconn; //selalu pake var global supaya bisa masuk ke fn
+        //capture data dari form
         $judul = htmlspecialchars($data["judul"]);
         $imdb_rating = htmlspecialchars($data["imdb_rating"]);
         $tahun = htmlspecialchars($data["tahun"]);
@@ -31,7 +32,7 @@
                         ('', '$judul', '$imdb_rating', '$tahun', '$genre', '$director', '$animasi', '$poster')
                         ";
         mysqli_query($dbconn, $query);
-        // return mysqli_affected_rows($dbconn);
+        return mysqli_affected_rows($dbconn);
     }
 
     function hapus($idmov) {
