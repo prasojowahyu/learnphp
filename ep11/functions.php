@@ -35,9 +35,9 @@
         return mysqli_affected_rows($dbconn);
     }
 
-    function hapus($idmov) {
+    function hapus($idmovie) {
         global $dbconn;
-        mysqli_query($dbconn, "DELETE FROM movietab WHERE idmovie = $idmov");
+        mysqli_query($dbconn, "DELETE FROM movietab WHERE idmovie = $idmovie");
         return mysqli_affected_rows($dbconn);
     }
 
