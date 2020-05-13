@@ -32,7 +32,7 @@
 </head>
 <body>
     <h1>Tambah data Movie</h1>
-    <form method="post" action="">
+    <form method="post" action="" enctype="multipart/form-data">
         <ul>
             <li>
                 <label for="judul">Judul:</label>
