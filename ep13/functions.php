@@ -77,6 +77,7 @@
         }
 
         //kalo lolos syarat diatas, upload gambarnya
+        //berikan nama baru$ekstensi biar ga konflik kalo ada yg sama
         $namaFileBaru = uniqid();
         $namaFileBaru .= ".";
         $namaFileBaru .= $ekstensiPoster;
