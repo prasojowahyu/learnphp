@@ -4,17 +4,19 @@ require 'functions.php';
 
 //submit check
 if (isset($_POST["submit"])) {
-    if (tambahdata($_POST) > 0) {
+    
+    //cek data udh ditambah blm
+    if (ubahdata($_POST) > 0) {
         echo "
                 <script>
-                    alert('data gagal ditambah.');
+                    alert('data gagal diubah.');
                     document.location.href = 'index.php';
                 </script>
             ";
     } else {
         echo "
                 <script>
-                    alert('data berhasil ditambah.');
+                    alert('data berhasil diubah.');
                     document.location.href = 'index.php';
                 </script>
             ";
@@ -29,11 +31,11 @@ if (isset($_POST["submit"])) {
 
 <head>
     <meta charset="UTF-8">
-    <title>Tambah data Moviee</title>
+    <title>Update data Moviee</title>
 </head>
 
 <body>
-    <h1>Tambah data Movie</h1>
+    <h1>Update data Movie</h1>
     <form method="post" action="">
         <ul>
             <li>
@@ -67,7 +69,7 @@ if (isset($_POST["submit"])) {
             </li>
             <br>
             <li>
-                <button type="submit" name="submit">Kirim!</button>
+                <button type="submit" name="submit">Ubah data!</button>
             </li>
         </ul>
     </form>
