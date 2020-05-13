@@ -41,4 +41,30 @@
         return mysqli_affected_rows($dbconn);
     }
 
+    function ubahdata($data) {
+        global $dbconn;
+
+        //capture data dari form
+        $judul = htmlspecialchars($data["judul"]);
+        $imdb_rating = htmlspecialchars($data["imdb_rating"]);
+        $tahun = htmlspecialchars($data["tahun"]);
+        $genre = htmlspecialchars($data["genre"]);
+        $director = htmlspecialchars($data["director"]);
+        $animasi = htmlspecialchars($data["animasi"]);
+        $poster = htmlspecialchars($data["poster"]);
+
+        //query insert data
+        $query = "UPDATE movietab SET
+                    judul = '$judul',
+                    imdb_rating = '$imdb_rating',
+                    tahun = '$tahun',
+                    genre = '$genre',
+                    director = '$director',
+                    animasi = '$animasi',
+                    poster = '$poster'
+                    WHERE idmovie = ''
+                ";
+        mysqli_query($dbconn, $query);
+    }
+
 ?>
