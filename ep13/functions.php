@@ -27,7 +27,8 @@
         $animasi = htmlspecialchars($data["animasi"]);
         
         //upload poster
-        if ( !$poster ) {
+        $poster = upload();
+        if ( $poster === false ) {
             return false;
         }
 
@@ -76,8 +77,11 @@
         }
 
         //kalo lolos syarat diatas, upload gambarnya
-        move_uploaded_file($tmpName, 'poster/', $namaFile); //buat mindahin file yg udh ada di temp folder
-        return $namaFile;
+        $namaFileBaru = uniqid();
+        $namaFileBaru .= ".";
+        $namaFileBaru .= $ekstensiPoster;
+        move_uploaded_file($tmpName, 'poster/' . $namaFileBaru ); //buat mindahin file yg udh ada di temp folder
+        return $namaFileBaru;
     }
 
     function hapus($idmovie) {
