@@ -39,7 +39,7 @@
             <tr>
                 <td><?= $i; ?></td>
                 <td>
-                    <a href="">Ubah</a> | <a href="hapus.php?idmovie=<?= $row["idmovie"]; ?>" onclick="return confirm('yakin?');">Hapus</a>
+                    <a href="ubah.php?idmovie=<?= $row["idmovie"]; ?>">Ubah</a> | <a href="hapus.php?idmovie=<?= $row["idmovie"]; ?>" onclick="return confirm('yakin?');">Hapus</a>
                 </td>
                 <td><img src="poster/<?= $row["poster"]; ?>" width="50"></td>
                 <td><?= $row["judul"]; ?></td>
