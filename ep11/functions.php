@@ -45,7 +45,7 @@
         global $dbconn;
 
         //capture data dari form
-        $idmovie = $data["idmovie"];
+        $idmov = $data["idmovie"];
         $judul = htmlspecialchars($data["judul"]);
         $imdb_rating = htmlspecialchars($data["imdb_rating"]);
         $tahun = htmlspecialchars($data["tahun"]);
@@ -63,7 +63,7 @@
                     director = '$director',
                     animasi = '$animasi',
                     poster = '$poster'
-                    WHERE idmovie = $idmovie
+                    WHERE idmovie = $idmov
                 ";
         mysqli_query($dbconn, $query);
         return mysqli_affected_rows($dbconn);
