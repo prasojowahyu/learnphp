@@ -1,7 +1,7 @@
 <?php
-    //karna koneksi di functions.php, maka file ini butuh functions.php
-    require 'functions.php';
-    $movie = query("SELECT * FROM movietab");
+//karna koneksi di functions.php, maka file ini butuh functions.php
+require 'functions.php';
+$movie = query("SELECT * FROM movietab");
 
 ?>
 
@@ -18,7 +18,7 @@
     <h1>Movie Lists</h1>
     <a href="tambahdata.php">Tambah Data</a>
     <br>
-    
+
     <table border="1" cellpadding="10" cellspacing="0">
         <tr>
             <th>No.</th>
@@ -55,3 +55,5 @@
 </body>
 
 </html>
+
+<!-- alias graph="git log --all --decorate --oneline --graph" > gunakan tiap restart gitbash-->
