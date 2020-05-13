@@ -4,6 +4,10 @@ require 'functions.php';
 //query mysql tampilkan semua data
 $movie = query("SELECT * FROM movietab");
 
+//tombol cari check
+if (isset ($_POST["cari"])) {
+    $movie = cari($_POST["keyword"]);
+}
 
 ?>
 
