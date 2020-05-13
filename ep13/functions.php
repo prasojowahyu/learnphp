@@ -74,6 +74,10 @@
                     <script";
             return false;
         }
+
+        //kalo lolos syarat diatas, upload gambarnya
+        move_uploaded_file($tmpName, 'poster/', $namaFile); //buat mindahin file yg udh ada di temp folder
+        return $namaFile;
     }
 
     function hapus($idmovie) {
