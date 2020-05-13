@@ -42,6 +42,7 @@ if (isset($_POST["submit"])) {
 <body>
     <h1>Update data Movie</h1>
     <form method="post" action="">
+        <input type="hidden" name="idmovie" value="<?= $mov["idmovie"]; ?>">
         <ul>
             <li>
                 <label for="judul">Judul:</label>
