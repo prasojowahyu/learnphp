@@ -1,7 +1,9 @@
 <?php
 //karna koneksi di functions.php, maka file ini butuh functions.php
 require 'functions.php';
+//query mysql tampilkan semua data
 $movie = query("SELECT * FROM movietab");
+
 
 ?>
 
