@@ -102,8 +102,16 @@
         $genre = htmlspecialchars($data["genre"]);
         $director = htmlspecialchars($data["director"]);
         $animasi = htmlspecialchars($data["animasi"]);
-        $poster = htmlspecialchars($data["poster"]);
+        //ambil dari mysql var posterLama
+        $posterLama = htmlspecialchars($data["posterLama"]);
 
+        //cek user ganti poster apa nggak
+        if ( $_FILES['poster']['error'] === 4 ) {
+            $poster = $posterLama;
+        } else {
+            $poster = upload();
+        }
+        
         //query insert data
         $query = "UPDATE movietab SET
                     judul = '$judul',
