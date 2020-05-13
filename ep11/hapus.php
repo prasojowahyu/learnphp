@@ -4,7 +4,7 @@
     //konekin ke halaman index
     if(isset($_GET["idmovie"]) ) {
         //cek keberhasilan querynya
-        if ( $_GET["idmovie"]) > 0) {
+        if ( hapus($_GET["idmovie"]) > 0) {
                 echo "
                     <script>
                         alert('data berhasil dihapus.');
