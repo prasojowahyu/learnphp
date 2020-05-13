@@ -26,7 +26,7 @@ if (isset ($_POST["cari"])) {
     <br><br>
 
     <form method="post" action="">
-        <input type="text" name="keyword" size="45" autocomplete="off" autofocus placeholder="Masukan judul film...">
+        <input type="text" name="keyword" size="45" autocomplete="off" autofocus placeholder="Masukan keyword apapun...">
         <button type="submit" name="cari">Go!</button>
     </form>
     <br>
