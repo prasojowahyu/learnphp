@@ -61,11 +61,11 @@
             </li>
             <li>
                 <label for="poster">Poster </label>
-                <input type="text" name="poster" id="poster">
+                <input type="file" name="poster" id="poster">
             </li>
             <br>
             <li>
-                <button type="submit" name="submit">Kirim!</button>
+                <button type="submit" name="submit">Tambah!</button>
             </li>
         </ul>
     </form>
