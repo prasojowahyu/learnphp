@@ -5,7 +5,7 @@ require 'functions.php';
 $idmovie = $_GET["idmovie"];
 
 //query data movie berdasarkan idnya
-$movie = query("SELECT * FROM movietab WHERE idmovie = $idmovie")[0]; //[0] berarti setelah panggil fn query begitu masuk ke array $rows, langsung cari row ke 0.
+$mov = query("SELECT * FROM movietab WHERE idmovie = $idmovie")[0]; //[0] berarti setelah panggil fn query begitu masuk ke array $rows, langsung cari row ke 0.
 
 //submit check
 if (isset($_POST["submit"])) {
