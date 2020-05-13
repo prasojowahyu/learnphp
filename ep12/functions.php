@@ -69,4 +69,11 @@
         return mysqli_affected_rows($dbconn);
     }
 
+    function cari($keyword) {                       //wildcard mysql
+        $query = "SELECT * FROM movietab
+                    WHERE judul LIKE '%$keyword%' 
+                    ";
+        return query($query);
+    }
+
 ?>
