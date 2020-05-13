@@ -25,7 +25,12 @@
         $genre = htmlspecialchars($data["genre"]);
         $director = htmlspecialchars($data["director"]);
         $animasi = htmlspecialchars($data["animasi"]);
-        $poster = htmlspecialchars($data["poster"]);
+        
+        //upload poster
+        if ( !$poster ) {
+            return false;
+        }
+
         //query insert data
         $query = "INSERT INTO movietab
                         VALUES
@@ -33,6 +38,42 @@
                         ";
         mysqli_query($dbconn, $query);
         return mysqli_affected_rows($dbconn);
+    }
+
+    function upload() {
+        //ambil dari data $_FILES (enctype) tambahdata.php
+        $namaFile = $_FILES['poster']['name'];
+        $ukuranFile = $_FILES['poster']['size'];
+        $error = $_FILES['poster']['error'];
+        $tmpName = $_FILES['poster']['tmp_name'];
+
+        //cek kalo gambar ga diupload
+        if ($error === 4) {
+            echo "<script>
+                    alert('Harap upload poster!');
+                <script";
+            return false;
+        }
+        
+
+        //cek poster harus sesuai ekstensi
+        $ekstensiPosterValid = ['jpg', 'jpeg'];
+        $ekstensiPoster = explode('.', $namaFile);
+        $ekstensiPoster = strtolower(end($ekstensiPoster)); //buat ekstensi yg diterima lowercase& . terahir
+        if ( !in_array($ekstensiPoster, $ekstensiPosterValid) ) {
+            echo "  <script>
+                        alert('Pilih gambar berekstensi jpeg/jpg');
+                    </script>";
+            return false;
+        }
+
+        //limit ukuran gambar
+        if ($ukuranFile > 1000000) {
+            echo "  <script>
+                        alert('Ukuran poster terlalu besar. <1MB!');
+                    <script";
+            return false;
+        }
     }
 
     function hapus($idmovie) {
