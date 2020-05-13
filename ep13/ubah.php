@@ -43,7 +43,7 @@ if (isset($_POST["submit"])) {
     <h1>Update data Movie</h1>
     <form method="post" action="" enctype="multipart/form-data">
         <input type="hidden" name="idmovie" value="<?= $mov["idmovie"]; ?>">
-        <input type="hidden" name="posterLama" value="<?= $mov["idmovie"]; ?>" >
+        <input type="hidden" name="posterLama" value="<?= $mov["idmovie"]; ?>" > <!--tampilin poster lama dulu-->
         <ul>
             <li>
                 <label for="judul">Judul:</label>
