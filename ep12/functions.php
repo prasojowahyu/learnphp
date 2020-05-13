@@ -71,7 +71,12 @@
 
     function cari($keyword) {                       //wildcard mysql
         $query = "SELECT * FROM movietab
-                    WHERE judul LIKE '%$keyword%' 
+                    WHERE judul LIKE '%$keyword%' OR
+                            imdb_rating LIKE '%$keyword%' OR
+                            tahun LIKE '%$keyword%' OR
+                            genre LIKE '%$keyword%' OR
+                            director LIKE '%$keyword%' OR
+                            animasi LIKE '%$keyword%' OR
                     ";
         return query($query);
     }
