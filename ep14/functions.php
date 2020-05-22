@@ -139,4 +139,21 @@
         return query($query);
     }
 
+    function registrasi($data) {
+        global $dbconn;
+
+        $username   = strtolower(stripslashes($data["username"]));
+        $password   = mysqli_real_escape_string($dbconn, $data["password"]);
+        $password2  = mysqli_real_escape_string($dbconn, $data["password2"]);
+
+        //cek konfirm password kalo salah di keduanya
+        if ( $password !== $password2 ) {
+            echo    "<script>
+                        alert('Konfirmasi password harus sesuai!')
+                    </script>";
+            return false;
+        }
+        return 1;
+    }
+
 ?>
