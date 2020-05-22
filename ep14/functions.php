@@ -153,7 +153,9 @@
                     </script>";
             return false;
         }
-        return 1;
+        //enkripsi password
+        $password    = md5($password);
+        var_dump($password);
     }
 
 ?>
