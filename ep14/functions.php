@@ -156,7 +156,12 @@
         //enkripsi password
         //tip, jangan pake md5, karna mudah diresolve
         $password    = password_hash($password, PASSWORD_DEFAULT); //PASSWORD_DEFAULT, sql otomatis menyesuaikan ke mode enkripsi terbaru, bisa dipastikan aman
-        var_dump($password);
+
+        //kirim akun baru ke database tabel Users
+        mysqli_query( $dbconn, "INSERT INTO users VALUES(
+                                '', '$username', '$password')"
+                    );
+        return mysqli_affected_rows( $dbconn );
     }
 
 ?>
