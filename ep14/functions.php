@@ -154,7 +154,8 @@
             return false;
         }
         //enkripsi password
-        $password    = md5($password);
+        //tip, jangan pake md5, karna mudah diresolve
+        $password    = password_hash($password, PASSWORD_DEFAULT); //PASSWORD_DEFAULT, sql otomatis menyesuaikan ke mode enkripsi terbaru, bisa dipastikan aman
         var_dump($password);
     }
 
