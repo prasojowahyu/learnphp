@@ -22,6 +22,9 @@
                 exit;
             }
         }
+
+        //alert kalo akun salah
+        $error = true;
     }
 
 ?>
@@ -40,6 +43,10 @@
 
 <body>
     <h1>Halaman Login</h1>
+
+    <?php if ( isset( $error ) ) : ?>
+        <p style="color: red; font-style:italic; ">Username / Password SALAH</p>
+    <?php endif; ?>
 
     <form method="post" action="">
         <li>
