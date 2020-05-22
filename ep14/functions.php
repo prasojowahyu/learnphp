@@ -146,6 +146,18 @@
         $password   = mysqli_real_escape_string($dbconn, $data["password"]);
         $password2  = mysqli_real_escape_string($dbconn, $data["password2"]);
 
+        //cek username udah ada di db atau belum
+        $result = mysqli_query( $dbconn, "SELECT username FROM users
+                                WHERE username = '$username'" );
+        //kalo username yg baru dikirim udah terdaftar di db, maka..
+        if ( mysqli_fetch_assoc($result) ) {
+            echo    "<script>
+                        alert('Username SUDAH TERDAFTAR');
+                    </script>";
+            
+            return false; //supaya gagal melakukan insert akun baru dan perintah selanjutnya ga dijalankan
+        }
+
         //cek konfirm password kalo salah di keduanya
         if ( $password !== $password2 ) {
             echo    "<script>
