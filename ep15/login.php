@@ -1,3 +1,30 @@
+<?php 
+    require 'functions.php';
+
+    //cek tombol login ditekan atau belum
+    if ( isset($_POST["login"]) ) {
+        
+        $username   = $_POST["username"];
+        $password   = $_POST["password"];
+
+        $result = mysqli_query( $dbconn, "SELECT * FROM users
+                                WHERE username = '$username'"
+                    );
+        
+        //cek username tersedia ga di db
+        if ( mysqli_num_rows( $result ) === 1 ) {
+            //cek passwordnya
+            $row    = mysqli_fetch_assoc( $result );
+            //resolve passwornya
+            if ( password_verify( $password, $row["password"]) ) {
+                //kalo password bener, alihkan ke index
+                header("Location: index.php");
+                exit;
+            }
+        }
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
