@@ -1,5 +1,11 @@
 <?php 
     session_start();
+    //kalo udah login, tetap di laman index
+    if ( isset($_SESSION["login"] )) {
+        header("Location: index.php");
+        exit;
+    }
+
     require 'functions.php';
 
     //cek tombol login ditekan atau belum
