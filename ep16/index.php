@@ -36,7 +36,8 @@
         <input type="text" name="keyword" size="45" autocomplete="off" autofocus placeholder="Masukan keyword apapun...">
         <button type="submit" name="cari">Go!</button>
     </form>
-    <br>
+    <button style="float: right;" onclick="window.location.href='logout.php';">Log Out</button>
+    <br><br>
 
     <table border="1" cellpadding="10" cellspacing="0">
         <tr>
