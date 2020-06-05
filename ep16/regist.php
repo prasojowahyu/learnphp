@@ -46,7 +46,8 @@
             <li>
                 <button type="submit" name="register">Daftar!</button>
             </li>
-
         </form>
+        <br>
+        Udah punya akun? <a href="login.php">Klik Disini</a>
     </body>
 </html>
