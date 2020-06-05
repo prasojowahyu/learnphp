@@ -1,5 +1,11 @@
 <?php
-    
+    session_start();
+    //harus login sebelum masuk ke halaman tambahdata
+    if( !isset($_SESSION["login"]) ) {
+        header( "Location: login.php" );
+        exit;
+    }
+
     require 'functions.php';
 
     //submit check
