@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     require 'functions.php';
 
     //cek tombol login ditekan atau belum
@@ -17,6 +18,9 @@
             $row    = mysqli_fetch_assoc( $result );
             //resolve passwornya
             if ( password_verify( $password, $row["password"]) ) {
+                //set session
+                $_SESSION["login"] = true; //cek ada login session, kalo gak ada lempar ke halaman login
+                
                 //kalo password bener, alihkan ke index
                 header("Location: index.php");
                 exit;

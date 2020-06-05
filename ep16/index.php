@@ -1,13 +1,20 @@
 <?php
-//karna koneksi di functions.php, maka file ini butuh functions.php
-require 'functions.php';
-//query mysql tampilkan semua data
-$movie = query("SELECT * FROM movietab");
+    session_start();
+    //harus login sebelum masuk ke halaman index
+    if( !isset($_SESSION["login"]) ) {
+        header( "Location: login.php" );
+        exit;
+    }
 
-//tombol cari check
-if (isset ($_POST["cari"])) {
-    $movie = cari($_POST["keyword"]);
-}
+    //karna koneksi di functions.php, maka file ini butuh functions.php
+    require 'functions.php';
+    //query mysql tampilkan semua data
+    $movie = query("SELECT * FROM movietab");
+
+    //tombol cari check
+    if (isset ($_POST["cari"])) {
+        $movie = cari($_POST["keyword"]);
+    }
 
 ?>
 
