@@ -1,6 +1,15 @@
 <?php
 session_start();
-//kalo udah login, tetap di laman index
+
+//cek cookie dulu udah aktif/belum
+if (isset($_COOKIE['login']) ) {
+    if ( $_COOKIE['login'] == 'true' ) {
+        $_SESSION['login'] = true;
+    }
+}
+
+//kalo udah login(COOKIE), ke index ga perlu login (selama cookie belum expired)
+//kalo remember me gak diceklis, tiap close session, diminta login lagi
 if (isset($_SESSION["login"])) {
     header("Location: index.php");
     exit;
