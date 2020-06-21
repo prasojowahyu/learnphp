@@ -5,7 +5,7 @@
     //cek cookie dulu udah aktif/belum
     if (isset($_COOKIE['id']) && isset($_COOKIE['key']) ) {
         $id     = $_COOKIE['id'];
-        $key    = $_COOKIE['id'];
+        $key    = $_COOKIE['key'];
 
         //ambil username berdasarkan id di db
         $result = mysqli_query( $dbconn, "SELECT username FROM users WHERE id = $id" );
