@@ -26,6 +26,11 @@ if (isset($_POST["login"])) {
             //set session
             $_SESSION["login"] = true; //cek ada login session, kalo gak ada lempar ke halaman login
 
+            //cek box remember me [COOKIE]
+            if( isset($_POST['remember']) ) {
+                //buat cookie nya
+                setcookie('login', 'true', time() + 60 );
+            }
             //kalo password bener, alihkan ke index
             header("Location: index.php");
             exit;
