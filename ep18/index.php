@@ -50,6 +50,11 @@
     <br><br>
 
     <!-- PAGINATION: tampilkan halaman -->
+    <!-- Navigasi ke halaman -->
+    <?php for( $i = 1; $i <= $nPage; $i++ ) : ?>
+        <a href=""><?= $i; ?></a>
+    <?php endfor; ?>
+    <br>
 
     <table border="1" cellpadding="10" cellspacing="0">
         <tr>
