@@ -52,9 +52,13 @@
     <!-- PAGINATION: tampilkan halaman -->
     <!-- Navigasi ke halaman -->
     <?php for( $i = 1; $i <= $nPage; $i++ ) : ?>
-        <a href="?halaman=<?= $i; ?>"><?= $i; ?></a>
+        <?php if( $i == $activePage ) : ?>
+            <a href="?halaman=<?= $i; ?>" style="font-weight: bold; color: red;" ><?= $i; ?></a>
+        <?php else : ?>
+            <a href="?halaman=<?= $i; ?>"><?= $i; ?></a>
+        <?php endif; ?>
     <?php endfor; ?>
-    <br>
+    <br><br>
 
     <table border="1" cellpadding="10" cellspacing="0">
         <tr>
