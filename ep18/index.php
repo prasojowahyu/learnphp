@@ -52,7 +52,7 @@
     <!-- PAGINATION: tampilkan halaman -->
     <!-- Navigasi ke halaman -->
     <?php for( $i = 1; $i <= $nPage; $i++ ) : ?>
-        <a href=""><?= $i; ?></a>
+        <a href="?halaman=<?= $i; ?>"><?= $i; ?></a>
     <?php endfor; ?>
     <br>
 
