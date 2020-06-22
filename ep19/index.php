@@ -72,6 +72,8 @@
             <?php $i++; ?>
         <?php endforeach; ?>
     </table>
+
+<script src="js/script.js"></script>
 </body>
 
 </html>
