@@ -51,8 +51,10 @@
 
     <!-- PAGINATION: tampilkan halaman -->
     <!-- Navigasi ke halaman -->
-    <a href="?halaman=<?= $activePage -1; ?>">&lt;</a> <!-- &lt = less than -->
-
+    <?php if( $activePage > 1 ) : ?>
+        <a href="?halaman=<?= $activePage -1; ?>">&lt;</a> <!-- &lt = less than -->
+    <?php endif; ?>
+    
     <?php for( $i = 1; $i <= $nPage; $i++ ) : ?>
         <?php if( $i == $activePage ) : ?>
             <a href="?halaman=<?= $i; ?>" style="font-weight: bold; color: red;" ><?= $i; ?></a>
