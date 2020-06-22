@@ -54,7 +54,7 @@
 
     <!-- Previous button -->
     <?php if( $activePage > 1 ) : ?>
-        <a href="?halaman=<?= $activePage - 1; ?>">&lt;</a> <!-- &lt = less than -->
+        <a href="?halaman=<?= $activePage - 1; ?>">&laquo;</a> <!-- left arrow -->
     <?php endif; ?>
     
     <?php for( $i = 1; $i <= $nPage; $i++ ) : ?>
@@ -67,7 +67,7 @@
     
     <!-- Next button -->
     <?php if( $activePage < $nPage ) : ?>
-        <a href="?halaman=<?= $activePage + 1; ?>">&gt;</a> <!-- &lt = greater than -->
+        <a href="?halaman=<?= $activePage + 1; ?>">&raquo;</a> <!-- right arrow -->
     <?php endif; ?>
     
     <br><br>
