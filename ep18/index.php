@@ -44,7 +44,7 @@
 
     <form method="post" action="">
         <input type="text" name="keyword" size="45" autocomplete="off" autofocus placeholder="Masukan keyword apapun...">
-        <button type="submit" name="cari">Go!</button>
+        <button type="submit" name="cari">Cari!</button>
     </form>
     <button style="float: right;" onclick="window.location.href='logout.php';">Log Out</button>
     <br><br>
