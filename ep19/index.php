@@ -33,12 +33,15 @@
     <br><br>
 
     <form method="post" action="">
-        <input type="text" name="keyword" size="45" autocomplete="off" autofocus placeholder="Masukan keyword apapun...">
-        <button type="submit" name="cari">Go!</button>
+        <input type="text" name="keyword" id="key" size="45" autocomplete="off" autofocus placeholder="Masukan keyword apapun...">
+        <button type="submit" name="cari" id="btnCari" >Go!</button>
     </form>
+
+
     <button style="float: right;" onclick="window.location.href='logout.php';">Log Out</button>
     <br><br>
 
+    <div id="container">
     <table border="1" cellpadding="10" cellspacing="0">
         <tr>
             <th>No.</th>
@@ -72,6 +75,7 @@
             <?php $i++; ?>
         <?php endforeach; ?>
     </table>
+    </div>
 
 <script src="js/script.js"></script>
 </body>
