@@ -14,7 +14,7 @@
     $nDataPerPage   = 5;
     $nData  = count(query("SELECT * FROM movietab"));
     $nPage  = ceil($nData / $nDataPerPage); //bulatkan keatas
-    
+    $activePage = $_GET["halaman"];
 
     $movie  = query("SELECT * FROM movietab LIMIT 0, $nDataPerPage"); //LIMIT [index], [banyak data]
 
