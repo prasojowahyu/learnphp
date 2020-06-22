@@ -15,9 +15,11 @@
     $nData  = count(query("SELECT * FROM movietab"));
     $nPage  = ceil($nData / $nDataPerPage); //bulatkan keatas
     $activePage = ( isset($_GET["halaman"]) ) ? $_GET["halaman"] : 1; //operator ternary >> if else simple mode
-    var_dump($activePage);
+    //tentukan awal data untuk tampil di tiap halaman
+    //contoh:       halamanaktif=2, awal data 5 [index]
+    $initData   = ( $nDataPerPage * $activePage ) - $nDataPerPage; // 5 * 2 - 5 = 5
 
-    $movie  = query("SELECT * FROM movietab LIMIT 0, $nDataPerPage"); //LIMIT [index], [banyak data]
+    $movie  = query("SELECT * FROM movietab LIMIT $initData, $nDataPerPage"); //LIMIT [index], [banyak data]
 
     //tombol cari check
     if (isset ($_POST["cari"])) {
