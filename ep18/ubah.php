@@ -1,32 +1,32 @@
 <?php
 
-require 'functions.php';
-//ambil data dari url index.php
-$idmovie = $_GET["idmovie"];
+    require 'functions.php';
+    //ambil data dari url index.php
+    $idmovie = $_GET["idmovie"];
 
-//query data movie berdasarkan idnya
-$mov = query("SELECT * FROM movietab WHERE idmovie = $idmovie")[0]; //[0] berarti setelah panggil fn query begitu masuk ke array $rows, langsung cari row ke 0.
+    //query data movie berdasarkan idnya
+    $mov = query("SELECT * FROM movietab WHERE idmovie = $idmovie")[0]; //[0] berarti setelah panggil fn query begitu masuk ke array $rows, langsung cari row ke 0.
 
-//submit check
-if (isset($_POST["submit"])) {
+    //submit check
+    if (isset($_POST["submit"])) {
 
-    //cek data udh ditambah blm
-    if (ubahdata($_POST) > 0) {
-        echo "
-                <script>
-                    alert('data berhasil diubah.');
-                    document.location.href = 'index.php';
-                </script>
-            ";
-    } else {
-        echo "
-                <script>
-                    alert('data gagal diubah.');
-                    document.location.href = 'index.php';
-                </script>
-            ";
+        //cek data udh ditambah blm
+        if (ubahdata($_POST) > 0) {
+            echo "
+                    <script>
+                        alert('data berhasil diubah.');
+                        document.location.href = 'index.php';
+                    </script>
+                ";
+        } else {
+            echo "
+                    <script>
+                        alert('data gagal diubah.');
+                        document.location.href = 'index.php';
+                    </script>
+                ";
+        }
     }
-}
 
 
 ?>

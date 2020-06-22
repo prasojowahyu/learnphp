@@ -8,8 +8,9 @@
 
     //karna koneksi di functions.php, maka file ini butuh functions.php
     require 'functions.php';
-    //query mysql tampilkan semua data
-    $movie = query("SELECT * FROM movietab");
+
+    //query mysql tampilkan per halaman [5 data]
+    $movie = query("SELECT * FROM movietab LIMIT 0, 5"); //LIMIT [index], [banyak data]
 
     //tombol cari check
     if (isset ($_POST["cari"])) {
@@ -38,6 +39,8 @@
     </form>
     <button style="float: right;" onclick="window.location.href='logout.php';">Log Out</button>
     <br><br>
+
+    <!-- PAGINATION: tampilkan halaman -->
 
     <table border="1" cellpadding="10" cellspacing="0">
         <tr>
