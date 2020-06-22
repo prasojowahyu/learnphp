@@ -10,7 +10,13 @@
     require 'functions.php';
 
     //query mysql tampilkan per halaman [5 data]
-    $movie = query("SELECT * FROM movietab LIMIT 0, 5"); //LIMIT [index], [banyak data]
+    //konfigurasi per halaman
+    $nDataPerPage   = 5;
+    $nData  = count(query("SELECT * FROM movietab"));
+    $nPage  = ceil($nData / $nDataPerPage); //bulatkan keatas
+    
+
+    $movie  = query("SELECT * FROM movietab LIMIT 0, $nDataPerPage"); //LIMIT [index], [banyak data]
 
     //tombol cari check
     if (isset ($_POST["cari"])) {
